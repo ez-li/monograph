@@ -9,7 +9,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      feedback: '',
+      partySize: 0,
+      emoji: ''
     }
+    this.updatePreview = this.updatePreview.bind(this);
+  }
+
+  updatePreview(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
 
   render() {
@@ -19,10 +29,10 @@ class App extends React.Component {
   
         <main className="app-main">
           <section className="app-left">
-            <Form />
+            <Form updatePreview={this.updatePreview} feedback={this.state.feedback} partySize={this.state.partySize} emoji={this.state.emoji} />
           </section>
           <section className="app-right">
-            <Preview />
+            <Preview feedback={this.state.feedback} partySize={this.state.partySize} emoji={this.state.emoji} />
           </section>
         </main>
       </div>

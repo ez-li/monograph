@@ -3,22 +3,24 @@ import './Form.css';
 
 function Form(props) {
 
+  const { updatePreview } = props;
+
   return (
     <div className="form">
       <label className="form-label">Your feedback</label>
       <textarea className="form-textarea"
         name="feedback"
         rows="4"
-        onChange={console.log("feedback changed")}
+        onChange={updatePreview}
         placeholder="Let us know what we did well or could improve..."
       />
 
       <label className="form-label">How many in your party?</label>
       <input className="form-input"
         type="number"
-        name="party"
+        name="partySize"
         min="1"
-        onChange={console.log('party changed')}
+        onChange={updatePreview}
         placeholder="2"
       />
 

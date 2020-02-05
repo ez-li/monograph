@@ -3,6 +3,8 @@ import './Preview.css';
 
 function Preview(props) {
 
+  const { feedback, partySize, emoji } = props;
+
   return (
     <section className="preview">
       <div className="preview-label">Preview of your review</div>
@@ -14,11 +16,12 @@ function Preview(props) {
 
         </div>
         <div className="preview-feedback">
-          Let us know what we did well or could improve...
-          {/* Dynamic feedback goes here */}
+          {feedback === '' ? 
+            <span>Let us know what we did well or could improve...</span>
+            : feedback}
         </div>
         <div className="preview-party">
-          2 {/* Dynamic party code goes here */} people dined here.
+          {partySize > 0 ? <span>{partySize} people dined here</span> : null}
         </div>
       </div>
     </section>
