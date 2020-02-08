@@ -7,7 +7,7 @@ class Form extends React.Component {
     this.state = {
       feedback: '',
       partySize: 2,
-      emoji: []
+      emojis: ['👍','❤️','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿']
     }
   }
 
@@ -32,11 +32,12 @@ class Form extends React.Component {
         />
   
         <label className="form-label">How was your meal?</label>
-        <div>
-  
-          *** Add Emoji selector ***
-          {/* Your Code goes here */}
-  
+        <div className="emoji-holder">
+          {this.state.emojis.map((emoji, i) => (
+            <div className="emoji-button">
+              {emoji}
+            </div>  
+          ))}
         </div>
       </div>
     );
