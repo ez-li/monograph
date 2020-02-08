@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       feedback: '',
-      partySize: 0,
+      partySize: 2,
       emoji: ''
     }
     this.updatePreview = this.updatePreview.bind(this);

@@ -21,7 +21,7 @@ function Preview(props) {
             : feedback}
         </div>
         <div className="preview-party">
-          {partySize > 0 ? <span>{partySize} people dined here</span> : null}
+          {partySize} people dined here.
         </div>
       </div>
     </section>
