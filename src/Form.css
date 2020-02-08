@@ -1,6 +1,7 @@
 .form {
   width: 480px;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .form-label {
@@ -26,4 +27,26 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+}
+
+.emoji-holder {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.emoji-button {
+  font-size: 1.5rem;
+  margin-right: 25px;
+  margin: 5px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+
+}
+.emoji-button:hover {
+  cursor: pointer;
 }

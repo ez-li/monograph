@@ -31,7 +31,7 @@ class Form extends React.Component {
           placeholder="2"
         />
   
-        <label className="form-label">How was your meal?</label>
+        <label className="form-label">How was your meal? (Pick up to 3)</label>
         <div className="emoji-holder">
           {this.state.emojis.map((emoji, i) => (
             <div className="emoji-button">
