@@ -34,7 +34,9 @@ class Form extends React.Component {
         <label className="form-label">How was your meal? (Pick up to 3)</label>
         <div className="emoji-holder">
           {this.state.emojis.map((emoji, i) => (
-            <div className="emoji-button">
+            <div className="emoji-button"
+              onClick={this.props.addEmoji}
+              style={this.props.selectedEmojis[emoji] ? {background: 'rgba(0, 0, 0, 0.1)'} : null}>
               {emoji}
             </div>  
           ))}
