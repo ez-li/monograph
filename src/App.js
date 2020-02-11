@@ -22,6 +22,8 @@ function App() {
     }))
   }
 
+  let isMobile = width < 1000 ? true : false;
+
   useEffect(() => {
     window.addEventListener('resize', updateLayout);
 
@@ -51,7 +53,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header width={width} />
+      <Header isMobile={isMobile} width={width} />
       <main className={ width < 1000 ? "app-mobile" : "app-main" }> 
         <section className="app-left">
           <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />

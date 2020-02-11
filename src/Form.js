@@ -26,9 +26,8 @@ function Form(props) {
         value={feedback}
         rows="4"
         onChange={(e) => {
-          console.log(e.target);
           updatePreview(e)
-        } }
+        }}
         placeholder="Let us know what we did well or could improve..."
       />
 
@@ -46,18 +45,18 @@ function Form(props) {
       <div className="emoji-rating-holder">
         {emojiRatings.map((emoji, i) => (
             <div className="emoji rating-button"
-                  name="selectedRating"
-                  key={i}
-                  value={emoji}
-                  onClick = {() => {
-                    updatePreview({ 'target' : { 'name': 'selectedRating', 'value': emoji } });
-                  }}
-                  style={selectedRating === emoji ? 
-                    {borderRadius: '50%',
-                    boxShadow: 'inset 0px 0px 0px 1.25px rgba(0, 0, 0, 0.25)',
-                    background: 'rgba(222, 237, 247, 0.5)'} : 
-                    {}}>
-                  <span>{emoji}</span>
+              name="selectedRating"
+              key={i}
+              value={emoji}
+              onClick = {() => {
+                updatePreview({ 'target' : { 'name': 'selectedRating', 'value': emoji } });
+              }}
+              style={selectedRating === emoji ? 
+                {borderRadius: '50%',
+                boxShadow: 'inset 0px 0px 0px 1.25px rgba(0, 0, 0, 0.25)',
+                background: 'rgba(222, 237, 247, 0.5)'} : 
+                {}}>
+              <span>{emoji}</span>
             </div>
 
         ))}
@@ -67,10 +66,10 @@ function Form(props) {
       <div className="emoji-tags-holder">
         {emojiTags.map((emoji, i) => 
             <div className="emoji tags-button"
-                  key={i}
-                  onClick={() => addEmoji(emoji)}
-                  style={selectedTags[emoji] ? {background: 'rgba(222, 237, 247, 0.5)'} : {}}>
-                  <span>{emoji}</span>
+              key={i}
+              onClick={() => addEmoji(emoji)}
+              style={selectedTags[emoji] ? {background: 'rgba(222, 237, 247, 0.5)'} : {}}>
+              <span>{emoji}</span>
             </div>
         )}
         <div className="additional-tags">

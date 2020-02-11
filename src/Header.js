@@ -4,15 +4,15 @@ import './Header.css';
 
 function Header(props) {
 
-  const { width } = props;
+  const { width, isMobile } = props;
 
   return (
     <header className="header">
        <div className="header-logo"></div>
-      <p className="header-content">
+      <p className="header-content" style={ isMobile ? {fontSize:'32px'} : {} }>
         We'd love a review
       </p>
-      { width < 800 ? null :<img src={logo} className="header-illustration" alt="illustration" /> }
+      { width < 800 ? null : <img src={logo} className="header-illustration" alt="illustration" /> }
     </header>
   );
 }
