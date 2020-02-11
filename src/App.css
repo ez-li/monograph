@@ -5,13 +5,20 @@
 
 .app-main {
   display: flex;
+  flex-direction: row;
+}
+
+.app-mobile {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 
 .app-left {
-  display: flex;
-  justify-content: center;
-  flex: 0 0 50%;
+  /* display: flex; */
+  /* justify-content: center; */
+  float: left;
+  flex: 50% 0 0%;
 }
 
 .app-right {
