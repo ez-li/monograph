@@ -5,7 +5,7 @@ function Form(props) {
   const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize } = props;
   const [{ emojiRatings, emojiTags }] = 
     useState({ emojiRatings: ['👍','👌','👎'],
-      emojiTags: ['❤️','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿'] });
+      emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿'] });
 
   return (
     <div className="form">
@@ -54,15 +54,15 @@ function Form(props) {
 
       <label className="form-label">Pick up to 3 tags:</label>
       <div className="emoji-tags-holder">
-        {emojiTags.map((emoji, i) => (
+        {emojiTags.map((emoji, i) => 
             <div className="emoji tags-button"
                   key={i}
                   onClick={() => addEmoji(emoji)}
                   style={selectedTags[emoji] ? {background: 'rgba(222, 237, 247, 0.5)'} : {}}>
                   <span>{emoji}</span>
             </div>
-
-        ))}
+        )}
+        <div className="load-more">Load more</div>
       </div>
     </div>
   );
