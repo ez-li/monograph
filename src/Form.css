@@ -76,10 +76,16 @@
   display: flex;
 }
 
+.additional-tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .load-more {
   color: rgba(0, 0, 0, 0.25);
   width: 100%;
-  margin-right: 30px;
+  margin-right: 35px;
   margin-top: 5px;
   margin-bottom: 5px;
   padding-top: 10px;

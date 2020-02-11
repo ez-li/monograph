@@ -2,11 +2,22 @@ import React, { useState } from 'react';
 import './Form.css';
 
 function Form(props) {
-  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize } = props;
-  const [{ emojiRatings, emojiTags }] = 
-    useState({ emojiRatings: ['👍','👌','👎'],
-      emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿'] });
 
+  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize } = props;
+  
+  const [{ loadMore, emojiRatings, emojiTags }, setState] = 
+    useState({ 
+      loadMore: false,
+      emojiRatings: ['👍','👌','👎'],
+      emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿'] 
+    });
+
+  const setLoadMore = () => {
+    setState(prevState => ({
+      ...prevState, loadMore: true
+    }))
+  }
+  
   return (
     <div className="form">
       <label className="form-label">Your feedback</label>
@@ -62,7 +73,12 @@ function Form(props) {
                   <span>{emoji}</span>
             </div>
         )}
-        <div className="load-more">Load more</div>
+        <div className="additional-tags">
+          {loadMore ? 
+          <div className="emoji-tags-holder"></div> : 
+          <div className="load-more"
+            onClick={() => setLoadMore( loadMore, true )}>Load more</div>}
+        </div>
       </div>
     </div>
   );
