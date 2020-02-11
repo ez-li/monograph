@@ -76,8 +76,7 @@ function Form(props) {
         <div className="additional-tags">
           {loadMore ? 
           <div className="emoji-tags-holder"></div> : 
-          <div className="load-more"
-            onClick={() => setLoadMore( loadMore, true )}>Load more</div>}
+          <div className="load-more" onClick={() => setLoadMore(loadMore, true )}>Load more</div>}
         </div>
       </div>
     </div>

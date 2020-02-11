@@ -13,15 +13,17 @@
 }
 
 .preview-content {
-  padding: 1.5rem;
+  padding: 1rem;
   background: #fff;
   box-shadow: 0px 30px 80px rgba(134, 158, 174, 0.15);
   position: relative;
-  /* max-width: 85%; */
 }
 
 .preview-rating {
   font-size: 45px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1.25px rgba(0, 0, 0, 0.25);
+  background: rgba(222, 237, 247, 0.5);
 }
 
 .preview-feedback {
@@ -36,30 +38,33 @@
 
 .preview-bottomBar {
   height: 60px;
-  /* width: 95%; */
   background: rgba(222, 237, 247, 0.2);
   display: flex;
   align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+
 }
 
 .preview-party {
   font-style: italic;
   font-size: 14px;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 } 
 
 .preview-emoji-tags-holder {
   flex: 0 1 auto;
   margin-left: auto;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
   display: flex;
   align-items: center;
+  
 }
 
 .preview-emoji-tag {
-  font-size: 24px;
+  color: rgba(0, 0, 0, .75);
+  font-size: 22px;
   margin-left: 5px;
-  padding: 5px 15px 5px 15px;
+  padding: 5px 8px 5px 8px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
@@ -69,4 +74,5 @@
 .preview-emoji-tag:hover {
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 1);
 }

@@ -11,7 +11,7 @@ function Preview(props) {
       <div className="preview-area">
         <div className="preview-content">
           <div className="preview-rating">
-          {selectedRating}
+            {selectedRating}
           </div>
           <div className="preview-feedback">
             {feedback === '' ? 
@@ -24,10 +24,8 @@ function Preview(props) {
               {partySize} people dined here.
             </div>
             <div className="preview-emoji-tags-holder">      
-              #    
-              {selectedTags.map((emoji, i) => (
-                <div className='preview-emoji-tag'
-                  key={i}>
+              # {selectedTags.map((emoji, i) => (
+                <div className='preview-emoji-tag' key={i}>
                   {emoji}
                 </div>
               ))}
