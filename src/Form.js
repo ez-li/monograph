@@ -5,16 +5,17 @@ function Form(props) {
 
   const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize } = props;
   
-  const [{ loadMore, emojiRatings, emojiTags }, setState] = 
+  const [{ loadMore, emojiRatings, emojiTags, additionalTags }, setState] = 
     useState({ 
       loadMore: false,
       emojiRatings: ['👍','👌','👎'],
-      emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍸','🌿'] 
+      emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍷','🌿'],
+      additionalTags: ['😩','🙄','🤔','🤫','🤯','🐓','☕️','💵','🎵','🚽','🍻','🌮','🍕','🐶','📸'] 
     });
 
   const setLoadMore = () => {
     setState(prevState => ({
-      ...prevState, loadMore: true
+      ...prevState, loadMore: true, emojiTags: emojiTags.concat(additionalTags)
     }))
   }
   
@@ -74,8 +75,8 @@ function Form(props) {
         )}
         <div className="additional-tags">
           {loadMore ? 
-          <div className="emoji-tags-holder"></div> : 
-          <div className="load-more" onClick={() => setLoadMore(loadMore, true )}>Load more</div>}
+            <div className="emoji-tags-holder"></div> : 
+            <div className="load-more" onClick={() => setLoadMore(loadMore, true )}>Load more</div>}
         </div>
       </div>
     </div>
