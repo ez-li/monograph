@@ -20,16 +20,6 @@ function App() {
     setState((prevState) => ({
       ...prevState, width: window.innerWidth
     }))
-    // if (width < 1000) {
-    //   setState(prevState => ({
-    //     ...prevState, mobileLayout: true
-    //   }))
-    // }
-    // if (window.innerWidth >= 1000) {
-    //   setState(prevState => ({
-    //     ...prevState, mobileLayout: false
-    //   }))
-    // }
   }
 
   useEffect(() => {
