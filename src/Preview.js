@@ -14,21 +14,23 @@ function Preview(props) {
         </div>
         <div className="preview-feedback">
           {feedback === '' ? 
-            <span>Let us know what we did well or could improve...</span>
+            <div className="preview-sample-feedback">Let us know what we did well or could improve...</div>
             : feedback}
         </div>
-        <div className="preview-party">
-          {partySize} people dined here.
-        </div>
-        <div className="preview-emoji-tags-holder">          
-          {selectedTags.map((emoji, i) => (
-            <div className='preview-emoji-tag'
-              key={i}>
-              {emoji}
-            </div>
-          ))}
-        </div>
       </div>
+      <div className="preview-bottomBar">
+          <div className="preview-party">
+            {partySize} people dined here.
+          </div>
+          <div className="preview-emoji-tags-holder">          
+            {selectedTags.map((emoji, i) => (
+              <div className='preview-emoji-tag'
+                key={i}>
+                {emoji}
+              </div>
+            ))}
+          </div>
+        </div>
     </section>
   );
 }

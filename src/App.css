@@ -6,27 +6,27 @@
 .app-main {
   display: flex;
   flex-direction: row;
-  padding-left: 5%;
 }
 
 .app-mobile {
   display: flex;
   flex-direction: column-reverse;
-  padding-left: 5%;
 }
 
 
 .app-left {
   display: flex;
-  /* justify-content: center; */
-  float: left;
-  flex: 0 0 50%;
+  float: center;
+  flex: 0 0 50%;  
+  justify-content: left;
+  padding-left: 5%;
 }
 
 .app-right {
+  padding-bottom: 2rem;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex: 0 0 50%;
   background: #F8FBFD;
-  min-height: 80vh;
+  padding-left: 5%;
 }

@@ -6,8 +6,8 @@ import Preview from './Preview.js';
 
 function App() {
 
-  const [{ feedback, partySize, selectedRating, selectedTags , mobileLayout}, setState] = 
-    useState({ feedback: '', partySize: 2, selectedRating: '', selectedTags: {}, mobileLayout: false
+  const [{ feedback, partySize, selectedRating, selectedTags, width}, setState] = 
+    useState({ feedback: '', partySize: 2, selectedRating: '', selectedTags: {}, width: window.innerWidth
   });
 
   const updatePreview = ({ target: { name, value } }) => {
@@ -17,16 +17,19 @@ function App() {
   }
 
   const updateLayout = () => {
-    if (window.innerWidth < 1000) {
-      setState(prevState => ({
-        ...prevState, mobileLayout: true
-      }))
-    }
-    if (window.innerWidth >= 1000) {
-      setState(prevState => ({
-        ...prevState, mobileLayout: false
-      }))
-    }
+    setState((prevState) => ({
+      ...prevState, width: window.innerWidth
+    }))
+    // if (width < 1000) {
+    //   setState(prevState => ({
+    //     ...prevState, mobileLayout: true
+    //   }))
+    // }
+    // if (window.innerWidth >= 1000) {
+    //   setState(prevState => ({
+    //     ...prevState, mobileLayout: false
+    //   }))
+    // }
   }
 
   useEffect(() => {
@@ -59,7 +62,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main className={ mobileLayout ? "app-mobile" : "app-main" }> 
+      <main className={ width < 1000 ? "app-mobile" : "app-main" }> 
         <section className="app-left">
           <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
         </section>
