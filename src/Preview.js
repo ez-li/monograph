@@ -11,7 +11,7 @@ function Preview(props) {
       <div className="preview-area">
         <div className="preview-content">
           <div className="preview-rating">
-            {selectedRating}
+            <span className="preview-emoji">{selectedRating}</span>
           </div>
           <div className="preview-feedback">
             {feedback === '' ? 

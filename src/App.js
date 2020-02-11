@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header width={width} />
       <main className={ width < 1000 ? "app-mobile" : "app-main" }> 
         <section className="app-left">
           <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
