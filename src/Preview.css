@@ -52,8 +52,21 @@
   flex: 0 1 auto;
   margin-left: auto;
   margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .preview-emoji-tag {
+  font-size: 24px;
+  margin-left: 5px;
+  padding: 5px 15px 5px 15px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  border-radius: 8px;
+}
 
+.preview-emoji-tag:hover {
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }

@@ -23,7 +23,8 @@ function Preview(props) {
             <div className="preview-party">
               {partySize} people dined here.
             </div>
-            <div className="preview-emoji-tags-holder">          
+            <div className="preview-emoji-tags-holder">      
+              #    
               {selectedTags.map((emoji, i) => (
                 <div className='preview-emoji-tag'
                   key={i}>
