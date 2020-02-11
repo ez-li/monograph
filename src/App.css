@@ -6,19 +6,21 @@
 .app-main {
   display: flex;
   flex-direction: row;
+  padding-left: 5%;
 }
 
 .app-mobile {
   display: flex;
   flex-direction: column-reverse;
+  padding-left: 5%;
 }
 
 
 .app-left {
-  /* display: flex; */
+  display: flex;
   /* justify-content: center; */
   float: left;
-  flex: 50% 0 0%;
+  flex: 0 0 50%;
 }
 
 .app-right {

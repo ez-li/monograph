@@ -20,12 +20,12 @@ function Preview(props) {
         <div className="preview-party">
           {partySize} people dined here.
         </div>
-        <div className="emoji-tags-holder">          
+        <div className="preview-emoji-tags-holder">          
           {selectedTags.map((emoji, i) => (
-            <button className='emoji-tag'
+            <div className='preview-emoji-tag'
               key={i}>
               {emoji}
-            </button>
+            </div>
           ))}
         </div>
       </div>
