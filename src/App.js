@@ -9,32 +9,35 @@ function App() {
   const [{ feedback, partySize, rating, selectedEmojis }, setState] = 
     useState({ feedback: '', partySize: 2, rating: '', selectedEmojis: {} });
 
-  const updatePreview = (event) => {
+  const updatePreview = ({ target: { name, value } }) => {
     setState(prevState => ({
-      ...prevState, [event.target.name]: event.target.value
+      ...prevState, [name]: value
     }))
   }
 
   const addEmoji = (emoji) => {
+    const newEmojis = {...selectedEmojis};
+    delete newEmojis[emoji];
     if (selectedEmojis[emoji]) {
-      setState((prevState) => {
-        let selectedEmojis = Object.assign({}, prevState.selectedEmojis);
-        delete selectedEmojis[emoji];
-        return { selectedEmojis }
-      })
+      setState((prevState) => ({
+        ...prevState, selectedEmojis: {
+          ...newEmojis
+        }
+      }))
     } else if (Object.keys(selectedEmojis).length < 3) {
-      setState((prevState) => {
-        let selectedEmojis = Object.assign({}, prevState.selectedEmojis);
-        selectedEmojis[emoji] = true;
-        return { selectedEmojis }
-      })
+      setState((prevState) => ({
+        ...prevState, selectedEmojis: {
+          ...selectedEmojis,
+          [emoji]: true
+        }
+      }))
     }
   }
 
   return (
     <div className="app">
       <Header />
-      <main className="app-mobile">
+      <main className="app-main">
         <section className="app-left">
           <Form selectedEmojis={selectedEmojis} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
         </section>
