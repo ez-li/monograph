@@ -6,8 +6,9 @@ import Preview from './Preview.js';
 
 function App() {
 
-  const [{ feedback, partySize, rating, selectedEmojis }, setState] = 
-    useState({ feedback: '', partySize: 2, rating: '', selectedEmojis: {} });
+  const [{ feedback, partySize, selectedRating, selectedTags }, setState] = 
+    useState({ feedback: '', partySize: 2, selectedRating: '', selectedTags: {}
+  });
 
   const updatePreview = ({ target: { name, value } }) => {
     setState(prevState => ({
@@ -16,18 +17,18 @@ function App() {
   }
 
   const addEmoji = (emoji) => {
-    const newEmojis = {...selectedEmojis};
+    const newEmojis = {...selectedTags};
     delete newEmojis[emoji];
-    if (selectedEmojis[emoji]) {
+    if (selectedTags[emoji]) {
       setState((prevState) => ({
-        ...prevState, selectedEmojis: {
+        ...prevState, selectedTags: {
           ...newEmojis
         }
       }))
-    } else if (Object.keys(selectedEmojis).length < 3) {
+    } else if (Object.keys(selectedTags).length < 3) {
       setState((prevState) => ({
-        ...prevState, selectedEmojis: {
-          ...selectedEmojis,
+        ...prevState, selectedTags: {
+          ...selectedTags,
           [emoji]: true
         }
       }))
@@ -39,68 +40,15 @@ function App() {
       <Header />
       <main className="app-main">
         <section className="app-left">
-          <Form selectedEmojis={selectedEmojis} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
+          <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
         </section>
         <section className="app-right">
-          <Preview feedback={feedback} partySize={partySize} emojis={Object.keys(selectedEmojis)} />
+          <Preview selectedRating={selectedRating} feedback={feedback} partySize={partySize} selectedTags={Object.keys(selectedTags)} />
         </section>
       </main>
     </div>
   );
 
 }
-
-
-// class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       feedback: '',
-//       partySize: 2,
-//       selectedEmojis: {}
-//     }
-//     this.updatePreview = this.updatePreview.bind(this);
-//     this.addEmoji = this.addEmoji.bind(this);
-//   }
-
-//   updatePreview(event) {
-//     this.setState({
-//       [event.target.name]: event.target.value
-//     })
-//   }
-
-//   addEmoji(emoji) {
-//     if (this.state.selectedEmojis[emoji]) {
-//       this.setState((prevState) => {
-//         let selectedEmojis = Object.assign({}, prevState.selectedEmojis);
-//         delete selectedEmojis[emoji];
-//         return { selectedEmojis }
-//       })
-//     } else if (Object.keys(this.state.selectedEmojis).length < 3) {
-//       this.setState((prevState) => {
-//         let selectedEmojis = Object.assign({}, prevState.selectedEmojis);
-//         selectedEmojis[emoji] = true;
-//         return { selectedEmojis }
-//       })
-//     }
-//   }
-
-//   render() {
-//     // let mobileWindow = window.innerWidth < 800 ? true : false;
-//     return (
-//       <div className="app">
-//         <Header />
-//         <main className={this.props.mobileWindow ? "app-mobile" : "app-main"}>
-//           <section className="app-left">
-//             <Form selectedEmojis={this.state.selectedEmojis} addEmoji={this.addEmoji} updatePreview={this.updatePreview} feedback={this.state.feedback} partySize={this.state.partySize} emoji={this.state.emoji} />
-//           </section>
-//           <section className="app-right">
-//             <Preview feedback={this.state.feedback} partySize={this.state.partySize} emojis={Object.keys(this.state.selectedEmojis)} />
-//           </section>
-//         </main>
-//       </div>
-//     );
-//   }
-// }
 
 export default App;
