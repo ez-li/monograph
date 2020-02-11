@@ -17,16 +17,17 @@
 .app-left {
   display: flex;
   float: center;
-  flex: 0 0 50%;  
+  flex: 50% 0 0%;  
   justify-content: left;
   padding-left: 5%;
+  /* padding-right: 2.5%; */
 }
 
 .app-right {
   padding-bottom: 2rem;
   display: flex;
   justify-content: left;
-  flex: 0 0 50%;
+  flex: 50% 0 0%;
   background: #F8FBFD;
   padding-left: 5%;
 }
