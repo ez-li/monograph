@@ -6,8 +6,13 @@ import Preview from './Preview.js';
 
 function App() {
 
-  const [{ feedback, partySize, selectedRating, selectedTags, width}, setState] = 
-    useState({ feedback: '', partySize: 2, selectedRating: '', selectedTags: {}, width: window.innerWidth
+  const [{ feedback, partySize, selectedRating, selectedTags, width }, setState] = 
+    useState({ 
+      feedback: '', 
+      partySize: 2, 
+      selectedRating: [], 
+      selectedTags: {}, 
+      width: window.innerWidth
   });
 
   const updatePreview = ({ target: { name, value } }) => {
@@ -31,7 +36,7 @@ function App() {
       window.removeEventListener('resize', updateLayout);
     }
   })
-
+  
   const addEmoji = (emoji) => {
     const newEmojis = {...selectedTags};
     delete newEmojis[emoji];
@@ -51,12 +56,20 @@ function App() {
     }
   }
 
+  const resetAnimate = ({ target: { name, value } }) => {
+    const temp = selectedRating;
+    temp.push(value);
+    setState(prevState => ({
+      ...prevState, selectedRating: temp
+    }))
+  }
+
   return (
     <div className="app">
       <Header isMobile={isMobile} width={width} />
       <main className={ isMobile ? "app-mobile" : "app-main" }> 
         <section className="app-left">
-          <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
+          <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} resetAnimate={resetAnimate} />
         </section>
         <section className="app-right">
           <Preview isMobile={isMobile} selectedRating={selectedRating} feedback={feedback} partySize={partySize} selectedTags={Object.keys(selectedTags)} />

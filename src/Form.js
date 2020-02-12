@@ -3,14 +3,14 @@ import './Form.css';
 
 function Form(props) {
 
-  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize } = props;
+  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize, resetAnimate } = props;
   
   const [{ loadMore, emojiRatings, emojiTags, additionalTags }, setState] = 
     useState({ 
       loadMore: false,
       emojiRatings: ['👍','👌','👎'],
       emojiTags: ['❤️','😎','😮','😥','😡','😶','😋','✨','👏','🌈','🔥','🌶','🎉','🍷','🌿'],
-      additionalTags: ['😩','😂','🤔','🤫','🤯','🐓','☕️','💵','🎵','🚽','🍻','🌮','🍕','🐶','📸'] 
+      additionalTags: ['😩','😂','🤔','🤫','🤯','🐓','☕️','💵','🎵','🚽','🍻','🌮','🍕','🐶','📸']
     });
 
   const setLoadMore = () => {
@@ -50,7 +50,7 @@ function Form(props) {
               key={i}
               value={emoji}
               onClick = {() => {
-                updatePreview({ 'target' : { 'name': 'selectedRating', 'value': emoji } });
+                resetAnimate({ 'target' : { 'name': 'selectedRating', 'value': emoji } });
               }}
               style={selectedRating === emoji ? 
                 {borderRadius: '50%',

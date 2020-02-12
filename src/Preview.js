@@ -4,6 +4,7 @@ import './Preview.css';
 function Preview(props) {
 
   const { feedback, partySize, selectedTags, selectedRating, isMobile } = props;
+  const len = selectedRating.length;
 
   return (
     <section className={ isMobile ? "preview-mobile" : "preview-desktop"}>
@@ -12,7 +13,11 @@ function Preview(props) {
         <div className={ isMobile ? "preview-content-mobile" : "preview-content-desktop"}>
           <div className="preview-sidebar">
             <div className="preview-rating">
-              <span className="preview-emoji">{selectedRating}</span>
+              <div className="preview-emoji">
+                {selectedRating.map((emoji,i) => 
+                  i === len - 1 ? <div className="animated bounceIn" key={i}>{emoji}</div> : null
+                )}
+              </div>
             </div>
             <div className="preview-party">Party of {partySize}</div>
           </div>
@@ -30,7 +35,7 @@ function Preview(props) {
           <div className="preview-emoji-tags-holder">      
             {selectedTags.length > 0 ? <span style={{color:"rgba(0, 0, 0, 0.75)"}}>#</span> : null }
             {selectedTags.map((emoji, i) => (
-              <div className='preview-emoji-tag' key={i}>{emoji}</div>))}
+              <div className="preview-emoji-tag animated pulse" key={i}>{emoji}</div>))}
           </div>
         </div>
       </div>
