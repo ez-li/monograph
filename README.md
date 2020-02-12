@@ -14,7 +14,7 @@ Convey the details of a 👍 experience with tags. What happens to the amazing m
 A 3 level rating system using emoji thumbs (👍,👌,👎), highlights on hover, animates in preview.
 
 **Emoji Tags**\
-Allows users to pick up to 3 emoji hashtags to add to their review, also highlights on hover and animates in preview. Shows up as clickable buttons in preview. Can only select 3, so must unselect before reselecting.
+Allows users to pick up to 3 emoji hashtags to add to their review, also highlights on hover and animates in preview. Shows up as clickable buttons in preview. Can only select 3, so must unselect before reselecting. Includes a "Load More" option, to prevent overwhelming user upon first look. Emojis available on load include: ❤️,😎,😮,😥,😡,😶,😋,✨,👏,🌈,🔥,🌶,🎉,🍷,🌿.
 
 **Mobile Viewer**\
 Collapsible window, shifting the layout of elements so the preview card appears on top. Preview card elements also shift for easier viewing.
