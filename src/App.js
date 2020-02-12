@@ -18,13 +18,13 @@ function App() {
   const updatePreview = ({ target: { name, value } }) => {
     setState(prevState => ({
       ...prevState, [name]: value
-    }))
+    }));
   }
 
   const updateLayout = () => {
     setState((prevState) => ({
       ...prevState, width: window.innerWidth
-    }))
+    }));
   }
 
   const isMobile = width < 900 ? true : false;
@@ -45,23 +45,23 @@ function App() {
         ...prevState, selectedTags: {
           ...newEmojis
         }
-      }))
+      }));
     } else if (Object.keys(selectedTags).length < 3) {
       setState((prevState) => ({
         ...prevState, selectedTags: {
           ...selectedTags,
           [emoji]: true
         }
-      }))
+      }));
     }
   }
-
-  const resetAnimate = ({ target: { name, value } }) => {
+  
+  const resetRating = ({ target: { name, value } }) => {
     const temp = selectedRating;
     temp.push(value);
     setState(prevState => ({
       ...prevState, selectedRating: temp
-    }))
+    }));
   }
 
   return (
@@ -69,7 +69,7 @@ function App() {
       <Header isMobile={isMobile} width={width} />
       <main className={ isMobile ? "app-mobile" : "app-main" }> 
         <section className="app-left">
-          <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} resetAnimate={resetAnimate} />
+          <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} resetRating={resetRating} />
         </section>
         <section className="app-right">
           <Preview isMobile={isMobile} selectedRating={selectedRating} feedback={feedback} partySize={partySize} selectedTags={Object.keys(selectedTags)} />

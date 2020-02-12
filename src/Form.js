@@ -3,7 +3,7 @@ import './Form.css';
 
 function Form(props) {
 
-  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize, resetAnimate } = props;
+  const { selectedTags, selectedRating, addEmoji, updatePreview, feedback, partySize, resetRating } = props;
   
   const [{ loadMore, emojiRatings, emojiTags, additionalTags }, setState] = 
     useState({ 
@@ -16,7 +16,7 @@ function Form(props) {
   const setLoadMore = () => {
     setState(prevState => ({
       ...prevState, loadMore: true, emojiTags: emojiTags.concat(additionalTags)
-    }))
+    }));
   }
   
   return (
@@ -49,7 +49,7 @@ function Form(props) {
               name="selectedRating"
               key={i}
               value={emoji}
-              onClick = {() => resetAnimate({ 'target' : { 'name': 'selectedRating', 'value': emoji } })}
+              onClick = {() => resetRating({ 'target' : { 'name': 'selectedRating', 'value': emoji } })}
               style={selectedRating === emoji ? 
                 {borderRadius: '50%',
                 boxShadow: 'inset 0px 0px 0px 1.25px rgba(0, 0, 0, 0.25)',
