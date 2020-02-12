@@ -9,15 +9,24 @@
 }
 
 .preview-area {
+  box-shadow: 0px 30px 80px rgba(134, 158, 174, 0.2);
   width: 95%;
 }
 
-.preview-content {
-  padding: 1rem 1rem 0rem 1rem;
-  min-height: 10rem;
+.preview-desktop {
+  display: flex;
+  flex-direction: row;
+}
+
+.preview-mobile {
+}
+
+.preview-sidebar {
   background: #fff;
-  box-shadow: 0px 30px 80px rgba(134, 158, 174, 0.15);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
 .preview-rating {
@@ -30,19 +39,49 @@
 
 .preview-emoji {
   border-radius: 50%;
-  /* box-shadow: inset 0px 0px 0px 1.25px rgba(222, 237, 247, 0.5); */
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   background: rgba(222, 237, 247, 0.5);  
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.preview-feedback {
-  font-size: 24px;
+.preview-party {
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+} 
+
+.preview-main-mobile {
+  background: #fff;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.preview-main-desktop {
+  background: #fff;
+  width: 22rem;
+  padding-bottom: 1rem;
+}
+
+.preview-feedback-mobile {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.75);
+  display: inline-block;
   word-wrap: break-word;
-  padding-bottom: 15px;
+  padding: 1rem;
+  width: 92.5%;
+  min-height: 4rem;
+}
+
+.preview-feedback-desktop {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.75);
+  display: block;
+  word-wrap: break-word;
+  padding: 1rem;
+  min-height: 4rem;
 }
 
 .preview-sample-feedback {
@@ -54,14 +93,7 @@
   background: rgba(222, 237, 247, 0.2);
   display: flex;
   align-items: center;
-  /* color: rgba(0, 0, 0, 0.75); */
 }
-
-.preview-party {
-  font-style: italic;
-  font-size: 14px;
-  padding-left: 1rem;
-} 
 
 .preview-emoji-tags-holder {
   flex: 0 1 auto;
@@ -69,16 +101,17 @@
   margin-right: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .preview-emoji-tag {
   font-size: 22px;
   margin-left: 5px;
-  padding: 5px 8px 5px 8px;
+  padding: 5px 11px 5px 13px;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 25px;
 }
 
 .preview-emoji-tag:hover {
@@ -86,5 +119,4 @@
   /* border: 1px solid rgba(0, 0, 0, 0.5); */
   /* color: rgba(0, 0, 0, 1); */
     color: rgba(0, 0, 0, 0.5);
-
 }

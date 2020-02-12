@@ -59,7 +59,7 @@ function App() {
           <Form selectedRating={selectedRating} selectedTags={selectedTags} addEmoji={addEmoji} updatePreview={updatePreview} feedback={feedback} partySize={partySize} />
         </section>
         <section className="app-right">
-          <Preview selectedRating={selectedRating} feedback={feedback} partySize={partySize} selectedTags={Object.keys(selectedTags)} />
+          <Preview isMobile={isMobile} selectedRating={selectedRating} feedback={feedback} partySize={partySize} selectedTags={Object.keys(selectedTags)} />
         </section>
       </main> 
     </div>
