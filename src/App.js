@@ -22,7 +22,7 @@ function App() {
     }))
   }
 
-  const isMobile = width < 1000 ? true : false;
+  const isMobile = width < 900 ? true : false;
 
   useEffect(() => {
     window.addEventListener('resize', updateLayout);

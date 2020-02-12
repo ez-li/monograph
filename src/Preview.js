@@ -6,10 +6,10 @@ function Preview(props) {
   const { feedback, partySize, selectedTags, selectedRating, isMobile } = props;
 
   return (
-    <section className="preview">
+    <section className={ isMobile ? "preview-mobile" : "preview-desktop"}>
       <div className="preview-label">Preview of your review</div>
       <div className="preview-area">
-        <div className={ isMobile ? "preview-mobile" : "preview-desktop"}>
+        <div className={ isMobile ? "preview-content-mobile" : "preview-content-desktop"}>
           <div className="preview-sidebar">
             <div className="preview-rating">
               <span className="preview-emoji">{selectedRating}</span>

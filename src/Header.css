@@ -4,6 +4,12 @@
   border-bottom: 1px solid #ccc;
 }
 
+.header-mobile {
+  padding: 30px 30px;
+  padding-left: 5%;
+  border-bottom: 1px solid #ccc;
+}
+
 .header-logo {
   width: 2rem;
   height: 2rem;

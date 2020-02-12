@@ -17,10 +17,9 @@
 .app-left {
   display: flex;
   float: center;
-  flex: 50% 0 0%;  
+  flex: 40% 0 0%;  
   justify-content: left;
   padding-left: 5%;
-  /* padding-right: 2.5%; */
 }
 
 .app-right {

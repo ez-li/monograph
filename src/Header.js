@@ -7,12 +7,12 @@ function Header(props) {
   const { width, isMobile } = props;
 
   return (
-    <header className="header">
+    <header className={ isMobile ? "header-mobile" : "header"}>
        <div className="header-logo"></div>
       <p className="header-content" style={ isMobile ? {fontSize:'32px'} : {} }>
         We'd love a review
       </p>
-      { width < 800 ? null : <img src={logo} className="header-illustration" alt="illustration" /> }
+      { width < 900 ? null : <img src={logo} className="header-illustration" alt="illustration" /> }
     </header>
   );
 }
